@@ -29,6 +29,10 @@ Nacos 从 2.2.0 版本开始,可通过 SPI 机制注入多数据源实现插件,
 ```
 
 ### 2. 导入 nacos 人大金仓 数据库脚本
+- 特殊设置： kingbase.conf ， '' null 的转换
+```shell
+ora_input_emptystr_isnull = off
+```
 
 [点击下载 nacos kingbase 脚本](https://github.com/pig-mesh/nacos-datasource-plugin-kingbase/tree/master/sql)
 

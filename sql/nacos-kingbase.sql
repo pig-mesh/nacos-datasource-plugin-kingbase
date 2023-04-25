@@ -15,7 +15,7 @@ CREATE TABLE "config_info" (
 	"effect" character varying(64 char) NULL,
 	"type" character varying(64 char) NULL,
 	"c_schema" text NULL,
-	"encrypted_data_key" text NOT NULL,
+	"encrypted_data_key" text  NULL,
 	CONSTRAINT "PRIMARY_73F26186" PRIMARY KEY (id),
 	CONSTRAINT "uk_configinfo_datagrouptenant_C827FEB8" UNIQUE (data_id, group_id, tenant_id)
 );
@@ -60,7 +60,7 @@ CREATE TABLE "config_info_beta" (
 	"src_user" text NULL,
 	"src_ip" character varying(50 char) NULL,
 	"tenant_id" character varying(128 char) NULL DEFAULT NULL::varchar,
-	"encrypted_data_key" text NOT NULL,
+	"encrypted_data_key" text  NULL,
 	CONSTRAINT "PRIMARY_E3F5B61F" PRIMARY KEY (id),
 	CONSTRAINT "uk_configinfobeta_datagrouptenant_E4D7C681" UNIQUE (data_id, group_id, tenant_id)
 );
@@ -152,7 +152,7 @@ CREATE TABLE "his_config_info" (
 	"src_ip" character varying(50 char) NULL,
 	"op_type" character(10 char) NULL,
 	"tenant_id" character varying(128 char) NULL DEFAULT NULL::varchar,
-	"encrypted_data_key" text NOT NULL,
+	"encrypted_data_key" text NULL,
 	CONSTRAINT "PRIMARY_93A4DC6B" PRIMARY KEY (nid)
 );
 CREATE INDEX idx_did_8DE97C10 ON his_config_info USING btree (data_id);
