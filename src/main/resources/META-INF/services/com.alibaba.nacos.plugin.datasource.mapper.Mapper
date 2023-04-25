@@ -1,0 +1,9 @@
+com.pig4cloud.plugin.impl.oracle.ConfigInfoAggrMapperByOracle
+com.pig4cloud.plugin.impl.oracle.ConfigInfoBetaMapperByOracle
+com.pig4cloud.plugin.impl.oracle.ConfigInfoMapperByOracle
+com.pig4cloud.plugin.impl.oracle.ConfigInfoTagMapperByOracle
+com.pig4cloud.plugin.impl.oracle.ConfigTagsRelationMapperByOracle
+com.pig4cloud.plugin.impl.oracle.HistoryConfigInfoMapperByOracle
+com.pig4cloud.plugin.impl.oracle.TenantInfoMapperByOracle
+com.pig4cloud.plugin.impl.oracle.TenantCapacityMapperByOracle
+com.pig4cloud.plugin.impl.oracle.GroupCapacityMapperByOracle
