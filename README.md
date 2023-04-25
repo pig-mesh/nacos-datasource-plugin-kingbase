@@ -17,7 +17,7 @@ Nacos 从 2.2.0 版本开始,可通过 SPI 机制注入多数据源实现插件,
 <dependency>
     <groupId>com.pig4cloud.plugin</groupId>
     <artifactId>nacos-datasource-plugin-kingbase</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
 </dependency>
 
 <!--人大金仓数据库驱动-->
@@ -30,7 +30,7 @@ Nacos 从 2.2.0 版本开始,可通过 SPI 机制注入多数据源实现插件,
 
 ### 2. 导入 nacos 人大金仓 数据库脚本
 
-[点击下载 nacos oracle 脚本](https://github.com/pig-mesh/nacos-datasource-plugin-oracle/tree/master/sql)
+[点击下载 nacos kingbase 脚本](https://github.com/pig-mesh/nacos-datasource-plugin-kingbase/tree/master/sql)
 
 ### 3. 配置 人大金仓 数据源链接信息
 
