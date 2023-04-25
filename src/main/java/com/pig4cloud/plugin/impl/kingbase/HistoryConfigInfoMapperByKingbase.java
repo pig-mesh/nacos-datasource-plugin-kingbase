@@ -1,11 +1,10 @@
-package com.pig4cloud.plugin.impl.oracle;
+package com.pig4cloud.plugin.impl.kingbase;
 
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
-import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.HistoryConfigInfoMapper;
 import com.pig4cloud.plugin.constants.DataSourceConstant;
 
-public class HistoryConfigInfoMapperByOracle extends OracleAbstractMapper implements HistoryConfigInfoMapper {
+public class HistoryConfigInfoMapperByKingbase extends KingbaseAbstractMapper implements HistoryConfigInfoMapper {
 
 	@Override
 	public String removeConfigHistory() {

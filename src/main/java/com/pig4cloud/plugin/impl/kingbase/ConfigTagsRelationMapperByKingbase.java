@@ -1,4 +1,4 @@
-package com.pig4cloud.plugin.impl.oracle;
+package com.pig4cloud.plugin.impl.kingbase;
 
 import com.alibaba.nacos.common.utils.StringUtils;
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
@@ -7,7 +7,7 @@ import com.pig4cloud.plugin.constants.DataSourceConstant;
 
 import java.util.Map;
 
-public class ConfigTagsRelationMapperByOracle extends OracleAbstractMapper implements ConfigTagsRelationMapper {
+public class ConfigTagsRelationMapperByKingbase extends KingbaseAbstractMapper implements ConfigTagsRelationMapper {
 
 	@Override
 	public String findConfigInfo4PageCountRows(final Map<String, String> params, final int tagSize) {

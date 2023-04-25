@@ -1,13 +1,10 @@
-package com.pig4cloud.plugin.impl.oracle;
+package com.pig4cloud.plugin.impl.kingbase;
 
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
-import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoTagMapper;
 import com.pig4cloud.plugin.constants.DataSourceConstant;
 
-import java.util.List;
-
-public class ConfigInfoTagMapperByOracle extends OracleAbstractMapper implements ConfigInfoTagMapper {
+public class ConfigInfoTagMapperByKingbase extends KingbaseAbstractMapper implements ConfigInfoTagMapper {
 
 	@Override
 	public String updateConfigInfo4TagCas() {

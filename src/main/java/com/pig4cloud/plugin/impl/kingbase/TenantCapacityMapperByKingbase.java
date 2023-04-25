@@ -1,11 +1,10 @@
-package com.pig4cloud.plugin.impl.oracle;
+package com.pig4cloud.plugin.impl.kingbase;
 
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
-import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 import com.alibaba.nacos.plugin.datasource.mapper.TenantCapacityMapper;
 import com.pig4cloud.plugin.constants.DataSourceConstant;
 
-public class TenantCapacityMapperByOracle extends OracleAbstractMapper implements TenantCapacityMapper {
+public class TenantCapacityMapperByKingbase extends KingbaseAbstractMapper implements TenantCapacityMapper {
 
 	@Override
 	public String incrementUsageWithDefaultQuotaLimit() {

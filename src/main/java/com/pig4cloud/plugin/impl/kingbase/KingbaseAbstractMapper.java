@@ -1,4 +1,4 @@
-package com.pig4cloud.plugin.impl.oracle;
+package com.pig4cloud.plugin.impl.kingbase;
 
 import com.alibaba.nacos.plugin.datasource.mapper.AbstractMapper;
 
@@ -9,7 +9,7 @@ import java.util.List;
  * @version 0.0.1
  * @date 2022/12/19 21:01
  */
-public abstract class OracleAbstractMapper extends AbstractMapper {
+public abstract class KingbaseAbstractMapper extends AbstractMapper {
 
 	@Override
 	public String select(List<String> columns, List<String> where) {

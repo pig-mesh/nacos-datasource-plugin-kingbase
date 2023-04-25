@@ -1,4 +1,4 @@
-package com.pig4cloud.plugin.impl.oracle;
+package com.pig4cloud.plugin.impl.kingbase;
 
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoAggrMapper;
@@ -6,7 +6,7 @@ import com.pig4cloud.plugin.constants.DataSourceConstant;
 
 import java.util.List;
 
-public class ConfigInfoAggrMapperByOracle extends OracleAbstractMapper implements ConfigInfoAggrMapper {
+public class ConfigInfoAggrMapperByKingbase extends KingbaseAbstractMapper implements ConfigInfoAggrMapper {
 
 	@Override
 	public String batchRemoveAggr(List<String> datumList) {

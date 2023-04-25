@@ -1,10 +1,10 @@
-package com.pig4cloud.plugin.impl.oracle;
+package com.pig4cloud.plugin.impl.kingbase;
 
 import com.alibaba.nacos.plugin.datasource.constants.TableConstant;
 import com.alibaba.nacos.plugin.datasource.mapper.ConfigInfoBetaMapper;
 import com.pig4cloud.plugin.constants.DataSourceConstant;
 
-public class ConfigInfoBetaMapperByOracle extends OracleAbstractMapper implements ConfigInfoBetaMapper {
+public class ConfigInfoBetaMapperByKingbase extends KingbaseAbstractMapper implements ConfigInfoBetaMapper {
 
 	@Override
 	public String updateConfigInfo4BetaCas() {

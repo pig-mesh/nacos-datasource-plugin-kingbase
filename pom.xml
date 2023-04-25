@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.pig4cloud.plugin</groupId>
     <artifactId>nacos-datasource-plugin-kingbase</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version>
     <name>nacos-datasource-plugin-kingbase</name>
     <description>nacos 人大金仓存储支持插件</description>
     <url>https://pig4cloud.com</url>
