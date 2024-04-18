@@ -22,7 +22,7 @@ Nacos 从 2.2.0 版本开始,可通过 SPI 机制注入多数据源实现插件,
 
 <!--人大金仓数据库驱动-->
 <dependency>
-    <groupId>com.pig4cloud.plugin</groupId>
+    <groupId>cn.com.kingbase</groupId>
     <artifactId>kingbase8</artifactId>
     <version>8.6.0</version>
 </dependency>
