@@ -157,10 +157,4 @@ public abstract class KingbaseAbstractMapper extends AbstractMapper {
 				+ " ) TMP) TMP2 WHERE ROWNUM <=" + (startRow + pageSize) + ") WHERE ROW_ID > " + startRow;
 	}
 
-	@Override
-	public abstract String getTableName();
-
-	@Override
-	public abstract String getDataSource();
-
 }

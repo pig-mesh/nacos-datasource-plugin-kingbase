@@ -7,11 +7,6 @@ import com.pig4cloud.plugin.constants.DataSourceConstant;
 public class TenantInfoMapperByKingbase extends KingbaseAbstractMapper implements TenantInfoMapper {
 
 	@Override
-	public String getTableName() {
-		return TableConstant.TENANT_INFO;
-	}
-
-	@Override
 	public String getDataSource() {
 		return DataSourceConstant.KINGBASE;
 	}
