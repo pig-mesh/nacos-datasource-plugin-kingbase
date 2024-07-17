@@ -4,14 +4,14 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.11</version>
+        <version>2.7.18</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.pig4cloud.plugin</groupId>
     <artifactId>nacos-datasource-plugin-kingbase</artifactId>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.3</version>
     <name>nacos-datasource-plugin-kingbase</name>
     <description>nacos 人大金仓存储支持插件</description>
     <url>https://pig4cloud.com</url>
