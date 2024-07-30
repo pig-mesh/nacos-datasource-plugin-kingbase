@@ -17,14 +17,14 @@ application.properties 配置文件中 spring.datasource.platform 配置项选�
 | NACOS 版本      | 插件版本  |
 |---------------|-------|
 | 2.2.0 - 2.3.0 | 0.0.2 |
-| 2.3.1 - 2.3.2 | 0.0.3 |
+| 2.3.1 - 2.3.2 | 0.0.4 |
 
 ```xml
 
 <dependency>
-    <groupId>com.pig4cloud.plugin</groupId>
+    <groupId>io.github.waterxcloud</groupId>
     <artifactId>nacos-datasource-plugin-kingbase</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
 </dependency>
 
         <!--人大金仓数据库驱动-->
