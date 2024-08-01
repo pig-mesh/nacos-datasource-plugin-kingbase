@@ -25,7 +25,7 @@ public class ConfigInfoMapperByKingbase extends KingbaseAbstractMapper implement
 		final String tenantId = (String) context.getWhereParameter(FieldConstant.TENANT_ID);
 		String sql = "SELECT id,data_id,group_id,tenant_id,app_name,content FROM config_info"
 				+ " WHERE tenant_id LIKE ? AND app_name= ?" + " LIMIT " + context.getPageSize() + " offset "
-				+ context.getPageSize() * context.getStartRow();
+				+ context.getStartRow();
 		return new MapperResult(sql, CollectionUtils.list(tenantId, appName));
 	}
 
@@ -33,7 +33,7 @@ public class ConfigInfoMapperByKingbase extends KingbaseAbstractMapper implement
 	public MapperResult getTenantIdList(MapperContext context) {
 		String sql = "SELECT tenant_id FROM config_info WHERE tenant_id != '" + NamespaceUtil.getNamespaceDefaultId()
 				+ "' GROUP BY tenant_id LIMIT " + context.getPageSize() + " offset "
-				+ context.getPageSize() * context.getStartRow();
+				+ context.getStartRow();
 		return new MapperResult(sql, Collections.emptyList());
 	}
 
@@ -41,7 +41,7 @@ public class ConfigInfoMapperByKingbase extends KingbaseAbstractMapper implement
 	public MapperResult getGroupIdList(MapperContext context) {
 		String sql = "SELECT group_id FROM config_info WHERE tenant_id ='" + NamespaceUtil.getNamespaceDefaultId()
 				+ "' GROUP BY group_id LIMIT " + context.getPageSize() + " offset "
-				+ context.getPageSize() * context.getStartRow();
+				+ context.getStartRow();
 		return new MapperResult(sql, Collections.emptyList());
 	}
 
@@ -49,7 +49,7 @@ public class ConfigInfoMapperByKingbase extends KingbaseAbstractMapper implement
 	public MapperResult findAllConfigKey(MapperContext context) {
 		String sql = " SELECT data_id,group_id,app_name  FROM ( "
 				+ " SELECT id FROM config_info WHERE tenant_id LIKE ? ORDER BY id LIMIT " + context.getPageSize()
-				+ " offset " + context.getPageSize() * context.getStartRow() + " )"
+				+ " offset " + context.getStartRow() + " )"
 				+ " g, config_info t WHERE g.id = t.id  ";
 		return new MapperResult(sql, CollectionUtils.list(context.getWhereParameter(FieldConstant.TENANT_ID)));
 	}
@@ -58,7 +58,7 @@ public class ConfigInfoMapperByKingbase extends KingbaseAbstractMapper implement
 	public MapperResult findAllConfigInfoBaseFetchRows(MapperContext context) {
 		String sql = "SELECT t.id,data_id,group_id,content,md5"
 				+ " FROM ( SELECT id FROM config_info ORDER BY id LIMIT " + context.getPageSize() + " offset "
-				+ context.getPageSize() * context.getStartRow() + " )" + " g, config_info t  WHERE g.id = t.id ";
+				+ context.getStartRow() + " )" + " g, config_info t  WHERE g.id = t.id ";
 		return new MapperResult(sql, Collections.emptyList());
 	}
 
@@ -68,7 +68,7 @@ public class ConfigInfoMapperByKingbase extends KingbaseAbstractMapper implement
 		boolean needContent = contextParameter != null && Boolean.parseBoolean(contextParameter);
 		String sql = "SELECT id,data_id,group_id,tenant_id,app_name," + (needContent ? "content," : "")
 				+ "md5,gmt_modified,type,encrypted_data_key FROM config_info WHERE id > ? ORDER BY id ASC LIMIT "
-				+ context.getPageSize() + " offset " + context.getPageSize() * context.getStartRow();
+				+ context.getPageSize() + " offset " + context.getStartRow();
 		return new MapperResult(sql, CollectionUtils.list(context.getWhereParameter(FieldConstant.ID)));
 	}
 
@@ -122,7 +122,7 @@ public class ConfigInfoMapperByKingbase extends KingbaseAbstractMapper implement
 	public MapperResult listGroupKeyMd5ByPageFetchRows(MapperContext context) {
 		String sql = "SELECT t.id,data_id,group_id,tenant_id,app_name,md5,type,gmt_modified,encrypted_data_key FROM "
 				+ "( SELECT id FROM config_info ORDER BY id LIMIT " + context.getPageSize() + " offset "
-				+ context.getPageSize() * context.getStartRow() + " ) g, config_info t WHERE g.id = t.id";
+				+ context.getStartRow() + " ) g, config_info t WHERE g.id = t.id";
 		return new MapperResult(sql, Collections.emptyList());
 	}
 
@@ -150,7 +150,7 @@ public class ConfigInfoMapperByKingbase extends KingbaseAbstractMapper implement
 			paramList.add(content);
 		}
 		return new MapperResult(sqlFetchRows + where + " LIMIT " + context.getPageSize() + " offset "
-				+ context.getPageSize() * context.getStartRow(), paramList);
+				+ context.getStartRow(), paramList);
 	}
 
 	@Override
@@ -184,13 +184,13 @@ public class ConfigInfoMapperByKingbase extends KingbaseAbstractMapper implement
 			paramList.add(content);
 		}
 		return new MapperResult(sql + where + " LIMIT " + context.getPageSize() + " offset "
-				+ context.getPageSize() * context.getStartRow(), paramList);
+				+ context.getStartRow(), paramList);
 	}
 
 	@Override
 	public MapperResult findConfigInfoBaseByGroupFetchRows(MapperContext context) {
 		String sql = "SELECT id,data_id,group_id,content FROM config_info WHERE group_id=? AND tenant_id=?" + " LIMIT "
-				+ context.getPageSize() + " offset " + context.getPageSize() * context.getStartRow();
+				+ context.getPageSize() + " offset " + context.getStartRow();
 		return new MapperResult(sql, CollectionUtils.list(context.getWhereParameter(FieldConstant.GROUP_ID),
 				context.getWhereParameter(FieldConstant.TENANT_ID)));
 	}
@@ -228,7 +228,7 @@ public class ConfigInfoMapperByKingbase extends KingbaseAbstractMapper implement
 			paramList.add(content);
 		}
 		return new MapperResult(sqlFetchRows + where + " LIMIT " + context.getPageSize() + " offset "
-				+ context.getPageSize() * context.getStartRow(), paramList);
+				+ context.getStartRow(), paramList);
 	}
 
 	@Override
@@ -237,12 +237,14 @@ public class ConfigInfoMapperByKingbase extends KingbaseAbstractMapper implement
 				+ " FROM (  SELECT id FROM config_info WHERE tenant_id LIKE ? ORDER BY id LIMIT ? offset ? )"
 				+ " g, config_info t  WHERE g.id = t.id ";
 		return new MapperResult(sql, CollectionUtils.list(context.getWhereParameter(FieldConstant.TENANT_ID),
-				context.getPageSize(), context.getPageSize() * (context.getStartRow() - 1)));
+				context.getPageSize(), context.getStartRow()));
 	}
 
 	@Override
 	public String getDataSource() {
 		return DataSourceConstant.KINGBASE;
 	}
+
+	
 
 }
