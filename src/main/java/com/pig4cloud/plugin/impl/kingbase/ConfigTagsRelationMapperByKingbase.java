@@ -56,7 +56,7 @@ public class ConfigTagsRelationMapperByKingbase extends KingbaseAbstractMapper i
 			paramList.add(tagArr[i]);
 		}
 		where.append(") ");
-		return new MapperResult(sql + where + " LIMIT " + context.getStartRow() + "," + context.getPageSize(),
+		return new MapperResult(sql + where + " LIMIT " + context.getPageSize() + " offset " + context.getStartRow(),
 				paramList);
 	}
 
