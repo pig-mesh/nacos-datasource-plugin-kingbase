@@ -152,4 +152,14 @@ public abstract class KingbaseAbstractMapper extends AbstractMapper {
 		return sql.toString();
 	}
 
+	/**
+	 * Get function by functionName.
+	 * @param functionName functionName
+	 * @return function
+	 */
+	@Override
+	public String getFunction(String functionName) {
+		return "NOW()";
+	}
+
 }

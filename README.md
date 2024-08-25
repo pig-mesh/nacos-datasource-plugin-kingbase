@@ -14,17 +14,18 @@ application.properties 配置文件中 spring.datasource.platform 配置项选�
 
 > 依赖已上传 maven 中央仓库，请勿使用阿里云代理
 
-| NACOS 版本      | 插件版本  |
-|---------------|-------|
-| 2.2.0 - 2.3.0 | 0.0.2 |
-| 2.3.1 - 2.3.2 | 0.0.3 |
+| NACOS 版本      | 插件版本     |
+|---------------|----------|
+| 2.2.0 - 2.3.0 | 0.0.2    |
+| 2.3.1 - 2.3.2 | 0.0.4.PG |
+| 2.4.0 - 2.4.1 | 0.0.5.PG |
 
 ```xml
 
 <dependency>
     <groupId>com.pig4cloud.plugin</groupId>
     <artifactId>nacos-datasource-plugin-kingbase</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.5.PG</version>
 </dependency>
 
         <!--人大金仓数据库驱动-->
@@ -36,6 +37,8 @@ application.properties 配置文件中 spring.datasource.platform 配置项选�
 ```
 
 ### 2. 导入 nacos 人大金仓 数据库脚本
+
+- 请注意这里均使用 PG 协议测试，如有问题请自行修改脚本
 
 - 特殊设置： kingbase.conf ， '' null 的转换
 

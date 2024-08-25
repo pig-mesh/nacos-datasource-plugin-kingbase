@@ -32,16 +32,14 @@ public class ConfigInfoMapperByKingbase extends KingbaseAbstractMapper implement
 	@Override
 	public MapperResult getTenantIdList(MapperContext context) {
 		String sql = "SELECT tenant_id FROM config_info WHERE tenant_id != '" + NamespaceUtil.getNamespaceDefaultId()
-				+ "' GROUP BY tenant_id LIMIT " + context.getPageSize() + " offset "
-				+ context.getStartRow();
+				+ "' GROUP BY tenant_id LIMIT " + context.getPageSize() + " offset " + context.getStartRow();
 		return new MapperResult(sql, Collections.emptyList());
 	}
 
 	@Override
 	public MapperResult getGroupIdList(MapperContext context) {
 		String sql = "SELECT group_id FROM config_info WHERE tenant_id ='" + NamespaceUtil.getNamespaceDefaultId()
-				+ "' GROUP BY group_id LIMIT " + context.getPageSize() + " offset "
-				+ context.getStartRow();
+				+ "' GROUP BY group_id LIMIT " + context.getPageSize() + " offset " + context.getStartRow();
 		return new MapperResult(sql, Collections.emptyList());
 	}
 
@@ -49,8 +47,7 @@ public class ConfigInfoMapperByKingbase extends KingbaseAbstractMapper implement
 	public MapperResult findAllConfigKey(MapperContext context) {
 		String sql = " SELECT data_id,group_id,app_name  FROM ( "
 				+ " SELECT id FROM config_info WHERE tenant_id LIKE ? ORDER BY id LIMIT " + context.getPageSize()
-				+ " offset " + context.getStartRow() + " )"
-				+ " g, config_info t WHERE g.id = t.id  ";
+				+ " offset " + context.getStartRow() + " )" + " g, config_info t WHERE g.id = t.id  ";
 		return new MapperResult(sql, CollectionUtils.list(context.getWhereParameter(FieldConstant.TENANT_ID)));
 	}
 
@@ -149,8 +146,9 @@ public class ConfigInfoMapperByKingbase extends KingbaseAbstractMapper implement
 			where += " AND content LIKE ? ";
 			paramList.add(content);
 		}
-		return new MapperResult(sqlFetchRows + where + " LIMIT " + context.getPageSize() + " offset "
-				+ context.getStartRow(), paramList);
+		return new MapperResult(
+				sqlFetchRows + where + " LIMIT " + context.getPageSize() + " offset " + context.getStartRow(),
+				paramList);
 	}
 
 	@Override
@@ -183,8 +181,8 @@ public class ConfigInfoMapperByKingbase extends KingbaseAbstractMapper implement
 			where.append(" AND content LIKE ? ");
 			paramList.add(content);
 		}
-		return new MapperResult(sql + where + " LIMIT " + context.getPageSize() + " offset "
-				+ context.getStartRow(), paramList);
+		return new MapperResult(sql + where + " LIMIT " + context.getPageSize() + " offset " + context.getStartRow(),
+				paramList);
 	}
 
 	@Override
@@ -227,8 +225,9 @@ public class ConfigInfoMapperByKingbase extends KingbaseAbstractMapper implement
 			where.append(" AND content LIKE ? ");
 			paramList.add(content);
 		}
-		return new MapperResult(sqlFetchRows + where + " LIMIT " + context.getPageSize() + " offset "
-				+ context.getStartRow(), paramList);
+		return new MapperResult(
+				sqlFetchRows + where + " LIMIT " + context.getPageSize() + " offset " + context.getStartRow(),
+				paramList);
 	}
 
 	@Override
@@ -244,7 +243,5 @@ public class ConfigInfoMapperByKingbase extends KingbaseAbstractMapper implement
 	public String getDataSource() {
 		return DataSourceConstant.KINGBASE;
 	}
-
-	
 
 }

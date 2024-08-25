@@ -21,8 +21,7 @@ public class ConfigInfoAggrMapperByKingbase extends KingbaseAbstractMapper imple
 		String tenantId = (String) context.getWhereParameter(FieldConstant.TENANT_ID);
 
 		String sql = "SELECT data_id,group_id,tenant_id,datum_id,app_name,content FROM config_info_aggr WHERE data_id= ? AND "
-				+ "group_id= ? AND tenant_id= ? ORDER BY datum_id LIMIT " + pageSize + " offset "
-				+ startRow;
+				+ "group_id= ? AND tenant_id= ? ORDER BY datum_id LIMIT " + pageSize + " offset " + startRow;
 		List<Object> paramList = CollectionUtils.list(dataId, groupId, tenantId);
 		return new MapperResult(sql, paramList);
 	}
